@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Mapbox Company Filter</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  .marker {
+        display: block;
+        border: none;
+        border-radius: 50%; /* Makes it a circle */
+        border: 1px solid black; /* Added black border */
+        border-radius: 50%; /* Makes it a circle */
+        cursor: pointer;
+        padding: 0;
+        background-color: red; /* Solid red background */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mapboxgl-popup {
+        max-width: 3300px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        overflow-y: scroll; /* add this to make the content scrollable if it exceeds the height */
+        /*overflow-x: visible;*/
+
+      
+    }
+    .legend {
+        background-color: #fff;
+        border-radius: 3px;
+        bottom: 30px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding: 10px;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+    }
+    .legend h4 {
+        margin: 0 0 10px;
+    }
+    .legend div span {
+        border-radius: 50%;
+        display: inline-block;
+        height: 10px;
+        margin-right: 5px;
+        width: 10px;
+    }
+      .image-gallery {
+        position: absolute;
+        overflow-x: auto;         /* Enable horizontal scrolling */
+  white-space: nowrap;      /* Prevent wrapping of inline or inline-block children */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        bottom: 10px;
+        left: 10px;
+        z-index: 1;
+      }
+      .image-gallery img {
+         height: 25.1vh;    /* 33.33% of the viewport height */
+       flex: 0 0 auto;           /* Prevent images from stretching */
+         width: auto;        /* maintain the aspect ratio */
+         margin: 1% auto;    /* centered with a slight margin */
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      /* Last image margin removal */
+.image-gallery img:last-child {
+  margin-right: 0;
+}
+      
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+  <div id="legend" class="legend">
+    <h4>Companies Profiting from Genocide</h4>
+    <div><span style="background-color: #723122"></span>Boeing</div>
+    <div><span style="background-color: #8b4225"></span>Lockheed Martin</div>
+    <div><span style="background-color: #a25626"></span>Raytheon</div>
+    <div><span style="background-color: #b86b25"></span>BAE Systems</div>
+    <div><span style="background-color: #ca8323"></span>General Dynamics</div>
+    <div><span style="background-color: #da9c20"></span>Northrup Grumman</div>
+</div>
+ 
+<div class="image-gallery"></div>
+
+
+<script src="path_to_your_js_file.js"></script>
+
+</body>
+</html>
